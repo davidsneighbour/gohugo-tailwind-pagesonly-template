@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+   {{ partial "head.html" . }}
+  {{ partial "css.html" }}
+</head>
+<body class="min-h-screen bg-white text-gray-900">
+  <header class="p-4 bg-gray-100 shadow">
+    <nav>
+      <ul class="flex gap-4">
+        <li><a href="{{ "/" | relLangURL }}">{{ i18n "nav_home" }}</a></li>
+        <li><a href="{{ "menu" | relLangURL }}">{{ i18n "nav_menu" }}</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="p-8">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="p-4 text-center text-sm text-gray-500">
+    {{ i18n "footer_text" }}
+  </footer>
+</body>
+</html>
